@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Spares Registration</title>
+    <link rel="stylesheet" th:href="@{/css/carsparesRegistration_page.css}">
+</head>
+<body>
+<div class="container">
+    <div class="title">Time to get started</div>
+    <div class="content">
+        <form action="#" th:object="${carsparesRegistrationModel}">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Company Name</span>
+                    <input type="text" placeholder="Enter company name" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Company Email Address</span>
+                    <input type="text" placeholder="Enter company email address" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Company Telephone Numbers</span>
+                    <input type="text" placeholder="Enter your telephone number" maxlength="10" onkeypress="return onlyNumberKey(event)" required>
+                </div>
+                <script>
+                    function onlyNumberKey(evt) {
+                     var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+                     if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+                     return false;
+                     return true;
+                                                }
+                </script>
+                <div class="input-box">
+                    <span class="details">Company Physical Address</span>
+                    <input type="text" placeholder="Enter company physical address" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Company Registration Number</span>
+                    <input type="text" placeholder="Enter your registration number" maxlength="14" onkeypress="return onlyNumberKey(event)" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Company Tax Number</span>
+                    <input type="text" placeholder="Enter your tax number" maxlength="10" onkeypress="return onlyNumberKey(event)" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Password</span>
+                    <input type="password" name="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Confirm Password</span>
+                    <input type="Password" name="confirmPassword" id="confirmPassword" placeholder="Confirm your password" required>
+                </div>
+            </div>
+
+
+            <form action ="login">
+                <div class="button">
+                    <input type="submit" value="Register">
+                </div>
+            </form>
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+
+  <link rel="stylesheet" th:href="@{/css/login_page.css}">
+</head>
+<body>
+<div class="container">
+  <div class="title">Welcome back</div>
+  <div class="content">
+    <form action="#" th:action="@{/login}" th:object="${SignInModel}" method="POST">
+      <div class="user-details">
+        <div class="input-box">
+          <span class="details">User Name</span>
+          <input type="text" th:field="*{email}" name="email" placeholder="Enter your username" required>
+        </div>
+        <div class="input-box">
+          <span class="details">Password</span>
+          <input type="password" name="password" placeholder="Enter your password" required>
+        </div>
+        <a th:href="registration">Not yet a member?</a>
+      </div>
+      <div class = "button">
+        <input type="submit" value="Login">
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>

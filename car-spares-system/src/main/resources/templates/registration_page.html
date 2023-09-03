@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/registration_page.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="container">
+    <div class="title">Time to get started</div>
+    <div class="content">
+        <form action="#" th:object="${signInModel}">
+
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Full Name</span>
+                    <input type="text" placeholder="Enter your name" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Email Address</span>
+                    <input type="text"  placeholder="Enter your email address"  >
+                </div>
+                <div class="input-box">
+                    <span class="details">ID/Passport</span>
+                    <input type="text" placeholder="Enter your ID/Passport number" maxlength="13" onkeypress="return onlyNumberKey(event)" required>
+                </div>
+                <script>
+                    function onlyNumberKey(evt) {
+                     var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+                     if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+                     return false;
+                     return true;
+                                                }
+                </script>
+                <div class="input-box">
+                    <span class="details">Cellphone Number</span>
+                    <input type="text" placeholder="Enter your number" maxlength="10" onkeypress="return onlyNumberKey(event)" required>
+                </div>
+            </div>
+            <div class="identity-details">
+                <input type="radio" name="identity" id="dot-1">
+                <input type="radio" name="identity" id="dot-2">
+
+                <span class="identity-title">Identity</span>
+                <div class="category">
+                    <label for="dot-1">
+                        <span class="dot one"></span>
+                        <span class="identity">Car Owner</span>
+                    </label>
+                    <label for="dot-2">
+                        <span class="dot two"></span>
+                        <span class="identity">Mechanic</span>
+                    </label>
+                </div>
+            </div>
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Car Brand</span>
+                    <select name="car-brand" id="car-brand" >
+
+                        <option value="0">Select Car</option>
+                        <option value="alfa_romeo">Alfa Romeo</option>
+                        <option value="audi">Audi</option>
+                        <option value="bmw">BMW</option>
+                        <option value="cadillac">Cadillac</option>
+                        <option value="chevrolet">Chevrolet</option>
+                        <option value="chrysler">Chrysler</option>
+                        <option value="citroen">Citroen</option>
+                        <option value="dodge">Dodge</option>
+                        <option value="fiat">Fiat</option>
+                        <option value="ford">Ford</option>
+                        <option value="gwm">GWM</option>
+                        <option value="honda">Honda</option>
+                        <option value="hyundai">Hyundai</option>
+                        <option value="isuzu">Isuzu</option>
+                        <option value="kia">Kia</option>
+                        <option value="land_rover">Land Rover</option>
+                        <option value="lexus">Lexus</option>
+                        <option value="mazda">Mazda</option>
+                        <option value="mercedes_benz">Mercedes-Benz</option>
+                        <option value="mercedes_benz_amg">Mercedes-AMG</option>
+                        <option value="mini_cooper">Mini-Cooper</option>
+                        <option value="mitsubishi">Mitsubishi</option>
+                        <option value="opel">Opel</option>
+                        <option value="peugeot">Peugeot</option>
+                        <option value="Renault">Renault</option>
+                        <option value="subaru">Subaru</option>
+                        <option value="suzuki">Suzuki</option>
+                        <option value="tata">Tata</option>
+                        <option value="toyota">Toyota</option>
+                        <option value="volkswagen">Volkswagen</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <input type="text" placeholder="Specify">
+                </div>
+                <div class="input-box">
+                    <span class="details">Car Model</span>
+                    <select name="car-model" id="car-model">
+                        <option value="0">Select Model</option>
+                        <option value="sedan">Sedan</option>
+                        <option value="hatchback">Hatchback</option>
+                        <option value="suv">SUV</option>
+                        <option value="convertible">Convertible</option>
+                        <option value="coupe">Coupe</option>
+                    </select>
+                    <input type="text" placeholder="Specify">
+                </div>
+                <div class="input-box">
+                    <span class="details">Password</span>
+                    <input class="password" type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Confirm Password</span>
+                    <input type="Password" name="confirm_password" id="confirm_password" placeholder="Confirm your password" required>
+                </div>
+
+            </div>
+            <form action ="login">
+            <div class="button">
+                <input type="submit" value="Register">
+            </div>
+            </form>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
